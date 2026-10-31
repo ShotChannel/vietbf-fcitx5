@@ -1,0 +1,7 @@
+[Addon]
+Name=VietBF
+Category=InputMethod
+Version=@PROJECT_VERSION@
+Library=vietbf
+Type=SharedLibrary
+OnDemand=True
