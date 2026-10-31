@@ -5,6 +5,8 @@ VietBF (Việt Brainfuck) là một bộ gõ tiếng Việt thực hiện bằng
 ### Disclaimer: Đây là một trò đùa (joke thôi hiểu ko) trong lúc t đang rảnh và thấy thừa tokens. Đây KHÔNG phải một dự án nghiêm túc và thằng vibe-code sẽ không chắc chắn nó sẽ hoạt động trên máy bạn hay không, và bản thân thằng vibe-code đó cũng không biết nó hoạt động như thế nào lmao 
 Nếu thực sự cần một bộ gõ tiếng Việt, hãy cài đặt https://github.com/LotusInputMethod/fcitx5-lotus .
 
+![kys](img_holder/837545238_2300468587471518_7499228807094749889_n.jpg)
+
 ## Cách gõ
 
 VietBF dùng một phím chữ làm ký tự gốc và một phím số `0` đến `5` để chọn dạng chữ hoặc thanh điệu.
