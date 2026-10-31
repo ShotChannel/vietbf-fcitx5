@@ -110,8 +110,6 @@ Bài kiểm thử này xác nhận một số mã cơ bản như c0, a2, A1, D0 
 
 ## Cấu trúc dự án
 
-## 5. Cấu trúc dự án
-
 ```text
 vietbf-fcitx5/
 ├── CMakeLists.txt
