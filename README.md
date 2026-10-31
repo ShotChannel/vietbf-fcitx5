@@ -2,7 +2,8 @@
 
 VietBF (Việt Brainfuck) là một bộ gõ tiếng Việt thực hiện bằng một VM chạy Brainfuck, cho Fcitx5.
 
-### Disclaimer: Đây là một trò đùa (joke thôi hiểu ko) trong lúc t đang rảnh và thấy thừa tokens. Đây KHÔNG phải một dự án nghiêm túc và t sẽ không chắc chắn nó sẽ hoạt động trên máy bạn hay không. Nếu thực sự cần một bộ gõ tiếng Việt, hãy cài đặt https://github.com/LotusInputMethod/fcitx5-lotus .
+### Disclaimer: Đây là một trò đùa (joke thôi hiểu ko) trong lúc t đang rảnh và thấy thừa tokens. Đây KHÔNG phải một dự án nghiêm túc và thằng vibe-code sẽ không chắc chắn nó sẽ hoạt động trên máy bạn hay không, và bản thân thằng vibe-code đó cũng không biết nó hoạt động như thế nào lmao 
+Nếu thực sự cần một bộ gõ tiếng Việt, hãy cài đặt https://github.com/LotusInputMethod/fcitx5-lotus .
 
 ## Cách gõ
 
@@ -94,3 +95,38 @@ Mở **Fcitx5 Configuration**, thêm **VietBF (Brainfuck)** vào nhóm bộ gõ 
 Addon được nạp bên trong tiến trình Fcitx5 hiện có. Không cần chạy một daemon VietBF riêng và cũng không cần quyền root sau khi cài đặt.
 
 Nếu sau tất cả những điều trên mà nó vẫn dell hoạt động? Tốt, chúc mừng vì đã tốn thời gian trong cuộc đời m để tin cái dự án này nó thực sự hoạt động hahaha
+
+## Kiểm thử Brainfuck VM
+Có thể biên dịch bài kiểm thử độc lập mà không cần liên kết với Fcitx5:
+```
+mkdir -p build
+c++ -std=c++17 -Isrc tests/test_brainfuck.cpp -o build/test_brainfuck
+./build/test_brainfuck
+```
+Kết quả mong đợi:
+`VietBF Brainfuck VM tests passed`. 
+
+Bài kiểm thử này xác nhận một số mã cơ bản như c0, a2, A1, D0 và chuỗi chào. Nó không thay thế việc biên dịch và thử nghiệm addon Fcitx5 trên hệ thống đích.
+
+## Cấu trúc dự án
+
+## 5. Cấu trúc dự án
+
+```text
+vietbf-fcitx5/
+├── CMakeLists.txt
+├── vietbf.bf                 # Chương trình Brainfuck độc lập
+├── README.md
+├── src/
+│   ├── CMakeLists.txt
+│   ├── brainfuck.hpp         # Brainfuck VM và chương trình được nhúng
+│   ├── vietbf.cpp            # Addon Fcitx5, xử lý sự kiện bàn phím
+│   ├── vietbf-im.conf        # Khai báo bộ gõ
+│   └── vietbf-addon.conf.in.in
+└── tests/
+    └── test_brainfuck.cpp
+```
+    
+Chương trình Brainfuck được nhúng trực tiếp trong src/brainfuck.hpp dưới dạng hằng kProgram. File vietbf.bf được giữ riêng để chạy hoặc nghiên cứu chương trình Brainfuck độc lập. Nếu chỉnh sửa chương trình trong vietbf.bf, bạn cần cập nhật phần kProgram tương ứng trong src/brainfuck.hpp, sau đó biên dịch lại addon.
+
+# Chúc may mắn!
